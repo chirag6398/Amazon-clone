@@ -3,11 +3,17 @@ import headerStyle from "../styles/header.module.css";
 import logo from "../assets/images/amazonLogo.png";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { Link } from "react-router-dom";
+import { stateValue } from "../StateProvider/stateProvider";
 
 export default function header() {
+  const [state, dispatch] = stateValue();
+
   return (
     <div className={headerStyle.header}>
-      <img className={headerStyle.header_logo} src={logo} alt="..." />
+      <Link to="/">
+        <img className={headerStyle.header_logo} src={logo} alt="..." />
+      </Link>
 
       <div className={headerStyle.header_search}>
         <input className={headerStyle.header_input} type="text"></input>
@@ -30,18 +36,21 @@ export default function header() {
           <span className={headerStyle.header_optionLineTwo}>prime</span>
         </div>
 
-        <div
-          classname={headerStyle.header_optionBasket}
-          style={{ color: "white", display: "flex", alignItems: "center" }}
-        >
-          <ShoppingBasketIcon />
-          <span
-            className={headerStyle.header_optionLineTwo}
-            style={{ margin: "0px 3px" }}
+        <Link to="/checkout">
+          {" "}
+          <div
+            classname={headerStyle.header_optionBasket}
+            style={{ color: "white", display: "flex", alignItems: "center" }}
           >
-            0
-          </span>
-        </div>
+            <ShoppingBasketIcon />
+            <span
+              className={headerStyle.header_optionLineTwo}
+              style={{ margin: "0px 3px" }}
+            >
+              {state.basket?.length}
+            </span>
+          </div>
+        </Link>
       </div>
     </div>
   );
