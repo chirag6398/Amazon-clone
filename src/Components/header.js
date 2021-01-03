@@ -4,10 +4,10 @@ import logo from "../assets/images/amazonLogo.png";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
-import { stateValue } from "../StateProvider/stateProvider";
+import { StateValue } from "../StateProvider/StateProvider";
 
 export default function header() {
-  const [state, dispatch] = stateValue();
+  const [state, dispatch] = StateValue();
 
   return (
     <div className={headerStyle.header}>

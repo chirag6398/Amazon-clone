@@ -3,7 +3,7 @@ export const initialState = {
 };
 
 export const reducer = (state, action) => {
-  console.log(action);
+  console.log(action.item);
   switch (action.type) {
     case "AddToCart":
       return {

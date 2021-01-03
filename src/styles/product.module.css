@@ -1,15 +1,6 @@
 .product_card {
-  width: 100%;
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 20;
-  flex-direction: column;
-  margin-right: 10px;
-  background-color: white;
-  border: 1px solid lightblue;
-  padding: 20px;
+  margin: 10px;
+  width: 18rem;
 }
 .product_info {
   font-weight: bolder;
@@ -35,8 +26,18 @@
   padding: 3px 4px;
   cursor: pointer;
   border-radius: 2px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 }
 
 .product_adToCartButton:hover {
   background-color: rgb(241, 109, 60);
+}
+@media screen and (min-width: 160px) and (max-width: 795px) {
+  .product_card {
+    width: 93%;
+    margin: 10px;
+  }
 }

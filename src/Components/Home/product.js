@@ -1,10 +1,10 @@
 import React from "react";
 import productStyle from "../../styles/product.module.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { stateValue } from "../../StateProvider/stateProvider";
+import { StateValue } from "../../StateProvider/StateProvider";
 
 export default function product({ title, imgUrl }) {
-  const [state, dispatch] = stateValue();
+  const [state, dispatch] = StateValue();
 
   const AddtocartHandler = () => {
     dispatch({
@@ -16,18 +16,20 @@ export default function product({ title, imgUrl }) {
     });
   };
   return (
-    <div className="card" style={{ width: "18rem", margin: "10px 10px" }}>
-      <div className="card-body">
-        <p className="card-text">{title}</p>
-      </div>
-      <img className="card-img-top" src={imgUrl} alt="..." />
+    <div className={productStyle.product_card}>
+      <div className="card">
+        <div className="card-body">
+          <p className="card-text">{title}</p>
+        </div>
+        <img className="card-img-top" src={imgUrl} alt="..." />
 
-      <buton
-        className={productStyle.product_adToCartButton}
-        onClick={AddtocartHandler}
-      >
-        Add to cart
-      </buton>
+        <buton
+          className={productStyle.product_adToCartButton}
+          onClick={AddtocartHandler}
+        >
+          Add to cart
+        </buton>
+      </div>
     </div>
   );
 }
