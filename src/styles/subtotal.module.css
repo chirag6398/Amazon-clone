@@ -1,4 +1,6 @@
-.Subtotal_container {
+/* .Subtotal_container {
   border: 1px solid lightgray;
   border-radius: 3px;
-}
+  display: flex;
+  flex: 1;
+} */

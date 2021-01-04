@@ -12,80 +12,93 @@ export default function home() {
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={0}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={1}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={2}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={3}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={4}
         />
-      </div>
-      <div className={homeStyle.home_products}>
+
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
-        />
-        <Product
-          title=" Some quick example text to build on the card title and make up the
-          bulk of the card's content."
-          imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={5}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={6}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={7}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
-        />
-      </div>
-      <div className={homeStyle.home_products}>
-        <Product
-          title=" Some quick example text to build on the card title and make up the
-          bulk of the card's content."
-          imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={8}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={9}
+        />
+
+        <Product
+          title=" Some quick example text to build on the card title and make up the
+          bulk of the card's content."
+          imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={10}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={11}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={12}
         />
         <Product
           title=" Some quick example text to build on the card title and make up the
           bulk of the card's content."
           imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={13}
+        />
+        <Product
+          title=" Some quick example text to build on the card title and make up the
+          bulk of the card's content."
+          imgUrl="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Grocery/GW/Chocolates_PC_CC_379x304_V2._SY304_CB404777310_.jpg"
+          id={14}
         />
       </div>
     </div>

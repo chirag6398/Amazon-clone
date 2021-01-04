@@ -3,7 +3,7 @@ import productStyle from "../../styles/product.module.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { StateValue } from "../../StateProvider/StateProvider";
 
-export default function product({ title, imgUrl }) {
+export default function product({ title, imgUrl, id, price }) {
   const [state, dispatch] = StateValue();
 
   const AddtocartHandler = () => {
@@ -12,6 +12,7 @@ export default function product({ title, imgUrl }) {
       item: {
         title: title,
         imgUrl: imgUrl,
+        id: id,
       },
     });
   };

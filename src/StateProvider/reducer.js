@@ -1,5 +1,6 @@
 export const initialState = {
   basket: [],
+  user: null,
 };
 
 export const reducer = (state, action) => {
@@ -10,7 +11,16 @@ export const reducer = (state, action) => {
         ...state,
         basket: [...state.basket, action.item],
       };
-
+    case "Remove Item From Cart":
+      return {
+        ...state,
+        basket: state.basket.filter((val) => val.id !== action.item.id),
+      };
+    case "Set_user":
+      return {
+        ...state,
+        user: action.user,
+      };
     default:
       return state;
   }

@@ -12,6 +12,13 @@ export default function Subtotal() {
           <p className="card-text">Subtotal (0:items) : </p>
           <input type="checkbox" />
           <span>add a gift for match</span>
+          <br />
+          <button
+            className="btn btn-dark"
+            style={{ display: "flex", flex: "1 1 auto" }}
+          >
+            CheckOut here
+          </button>
         </div>
       </div>
     </div>
