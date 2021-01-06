@@ -29,3 +29,12 @@
   width: 100%;
   margin-bottom: 10px;
 }
+
+@media screen and (min-width: 160px) and (max-width: 795px) {
+  .checkout_ad {
+    width: 100%;
+    object-fit: contain;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+  }
+}

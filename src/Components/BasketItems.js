@@ -25,18 +25,32 @@ export default function BasketItems() {
                 className="card-img-top"
                 src={val.imgUrl}
                 alt="Card image cap"
-                style={{ width: "15%", objectFit: "contain", height: "auto" }}
+                style={{
+                  width: "50%",
+                  objectFit: "contain",
+                  height: "auto",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
               />
               <div className="card-body">
                 <h5 className="card-title">{val.title}</h5>
               </div>
-              <div>
+              <div
+                style={{ display: "flex", flex: "1", justifyContent: "center" }}
+              >
                 <button
                   type="button"
                   onClick={(e) => {
                     itemDeleteHandler(e, val.id);
                   }}
-                  className="btn btn-outline-danger"
+                  style={{
+                    width: "50%",
+                    backgroundColor: "#f0c14b",
+                    borderColor: "#a88734 #9c7e31 #846a29",
+                    marginBottom: "10px",
+                  }}
+                  className="btn  btn-outline"
                 >
                   Remove
                 </button>
