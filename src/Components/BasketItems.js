@@ -29,6 +29,7 @@ export default function BasketItems() {
                   width: "50%",
                   objectFit: "contain",
                   height: "auto",
+                  maxHeight: "20vh",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }}
