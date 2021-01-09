@@ -1,7 +1,24 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import SubtotalStyle from "../styles/subtotal.module.css";
+import { StateValue } from "../StateProvider/StateProvider";
+
 export default function Subtotal() {
+  const [state, dispatch] = StateValue();
+  var total = 0;
+  // if (state.basket) {
+  //   total = state.basket.reduce((accum, currentvalue, index, array) => {
+  //     let total = accum + currentvalue.price;
+  //     console.log(accum);
+  //     if (index === array.length - 1) {
+  //       return total;
+  //     }
+  //   });
+  // }
+  for (let val of state.basket) {
+    total += val.price;
+  }
+
   const history = useHistory();
   return (
     <div className={SubtotalStyle.Subtotal_container}>
@@ -10,7 +27,9 @@ export default function Subtotal() {
         style={{ backgroundColor: "#f8f5f2", color: "#232323" }}
       >
         <div className="card-body">
-          <p className="card-text">Subtotal (0:items) : </p>
+          <p className="card-text">
+            Subtotal ({state.basket?.length}:items) :<b>Rs.{total}</b>
+          </p>
           <input type="checkbox" />
           <span>add a gift for match</span>
           <br />

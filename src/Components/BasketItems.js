@@ -20,7 +20,10 @@ export default function BasketItems() {
       {state.basket.map((val, i) => {
         return (
           <div className={basketStyle.basket_container} key={i}>
-            <div className="card mb-3" style={{ border: "none" }}>
+            <div
+              className="card mb-3"
+              style={{ border: "none", flexDirection: "row" }}
+            >
               <img
                 className="card-img-top"
                 src={val.imgUrl}
@@ -30,31 +33,34 @@ export default function BasketItems() {
                   objectFit: "contain",
                   height: "auto",
                   maxHeight: "20vh",
-                  marginLeft: "auto",
-                  marginRight: "auto",
                 }}
               />
               <div className="card-body">
                 <h5 className="card-title">{val.title}</h5>
-              </div>
-              <div
-                style={{ display: "flex", flex: "1", justifyContent: "center" }}
-              >
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    itemDeleteHandler(e, val.id);
-                  }}
+                <strong>Rs.{val.price}</strong>
+                <div
                   style={{
-                    width: "200px",
-                    backgroundColor: "#f0c14b",
-                    borderColor: "#a88734 #9c7e31 #846a29",
-                    marginBottom: "10px",
+                    display: "flex",
+                    flex: "1",
+                    justifyContent: "center",
                   }}
-                  className="btn  btn-outline"
                 >
-                  Remove
-                </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      itemDeleteHandler(e, val.id);
+                    }}
+                    style={{
+                      width: "200px",
+                      backgroundColor: "#f0c14b",
+                      borderColor: "#a88734 #9c7e31 #846a29",
+                      marginBottom: "10px",
+                    }}
+                    className="btn  btn-outline"
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
             </div>
           </div>

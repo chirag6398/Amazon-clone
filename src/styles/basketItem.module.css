@@ -4,7 +4,7 @@
 @media screen and (min-width: 160px) and (max-width: 795px) {
   .basket_container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 }
