@@ -20,7 +20,7 @@ export default function BasketItems() {
       {state.basket.map((val, i) => {
         return (
           <div className={basketStyle.basket_container} key={i}>
-            <div className="card mb-3">
+            <div className="card mb-3" style={{ border: "none" }}>
               <img
                 className="card-img-top"
                 src={val.imgUrl}
@@ -46,7 +46,7 @@ export default function BasketItems() {
                     itemDeleteHandler(e, val.id);
                   }}
                   style={{
-                    width: "50%",
+                    width: "200px",
                     backgroundColor: "#f0c14b",
                     borderColor: "#a88734 #9c7e31 #846a29",
                     marginBottom: "10px",

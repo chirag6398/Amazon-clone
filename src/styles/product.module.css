@@ -8,7 +8,7 @@
 }
 .product_card:hover {
   transform: scale(1.1);
-  box-shadow: 3px 3px 6px 3px black;
+  box-shadow: 3px 3px 8px 3px rgb(61, 60, 60);
 }
 .product_info {
   font-weight: bolder;
@@ -45,7 +45,7 @@
 }
 @media screen and (min-width: 160px) and (max-width: 795px) {
   .product_card {
-    width: 93%;
-    margin: 10px;
+    width: 60%;
+    margin: 15px;
   }
 }

@@ -30,7 +30,7 @@ export default function header() {
         <Link to={!state.user && "/login"}>
           <div className={headerStyle.header_option}>
             <span className={headerStyle.header_optionLineOne}>
-              {state.user ? <span>{state.user}</span> : "hello,guest"}
+              {state.user ? <span>{`Hello,${state.user}`}</span> : "guest"}
             </span>
 
             <span

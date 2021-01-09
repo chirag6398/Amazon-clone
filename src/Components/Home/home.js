@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./product";
+import Product from "./Product";
 import homeStyle from "../../styles/home.module.css";
 import Himg from "../../assets/images/H1.jpg";
 

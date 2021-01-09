@@ -2,9 +2,20 @@ import React from "react";
 import productStyle from "../../styles/product.module.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { StateValue } from "../../StateProvider/StateProvider";
+import { useSpring, animated } from "react-spring";
 
-export default function product({ title, imgUrl, id, price }) {
+export default function Product({ title, imgUrl, id, price }) {
   const [state, dispatch] = StateValue();
+  // const style = useSpring({
+  //   to: {
+  //     transform: "scale(1.1)",
+  //     boxShadow: "3px 3px 6px 3px black",
+  //     delay: "5000",
+  //   },
+  //   from: {
+  //     transition: "all 1s",
+  //   },
+  // });
 
   const AddtocartHandler = () => {
     dispatch({

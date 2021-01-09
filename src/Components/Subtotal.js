@@ -1,7 +1,8 @@
-import { CheckBox } from "@material-ui/icons";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import SubtotalStyle from "../styles/subtotal.module.css";
 export default function Subtotal() {
+  const history = useHistory();
   return (
     <div className={SubtotalStyle.Subtotal_container}>
       <div
@@ -14,6 +15,9 @@ export default function Subtotal() {
           <span>add a gift for match</span>
           <br />
           <button
+            onClick={(e) => {
+              history.push("/payment");
+            }}
             className="btn btn-dark"
             style={{ display: "flex", flex: "1 1 auto" }}
           >
