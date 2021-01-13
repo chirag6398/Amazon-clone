@@ -24,7 +24,6 @@
   margin: 0px 20px;
   flex: 0.2;
 }
-.payment_address {
-  margin: 0px 20px;
+.payment_address .payment_details {
   flex: 0.8;
 }

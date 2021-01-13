@@ -6,15 +6,7 @@ import { StateValue } from "../StateProvider/StateProvider";
 export default function Subtotal() {
   const [state, dispatch] = StateValue();
   var total = 0;
-  // if (state.basket) {
-  //   total = state.basket.reduce((accum, currentvalue, index, array) => {
-  //     let total = accum + currentvalue.price;
-  //     console.log(accum);
-  //     if (index === array.length - 1) {
-  //       return total;
-  //     }
-  //   });
-  // }
+
   for (let val of state.basket) {
     total += val.price;
   }
