@@ -5,6 +5,7 @@ import BasketItems from "./BasketItems.js";
 import { useHistory } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import subtotalStyle from "../styles/subtotal.module.css";
+import axios from "../axios";
 
 export default function Payment() {
   const stripe = useStripe();
@@ -16,16 +17,23 @@ export default function Payment() {
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
   const [clientSecret, setClientSecret] = useState(true);
-  // useEffect(() => {
-  //   const getClientSecret = async () => {
-  //     const response = await axios({
-  //       method: "post",
-  //       url: `/payments/create?total=${getBasketTotal(state.basket)}`,
-  //     });
-  //     setClientSecret(response.data.clientSecret);
-  //   };
-  //   getClientSecret();
-  // }, [state.basket]);
+  var total = 0;
+
+  for (let val of state.basket) {
+    total += val.price;
+  }
+
+  useEffect(() => {
+    const getClientSecret = async () => {
+      const response = await axios({
+        method: "post",
+        url: `/payments/create?total=${total * 100}`,
+      });
+      setClientSecret(response.data.clientSecret);
+    };
+    getClientSecret();
+  }, [state.basket]);
+  console.log(">>>>>>>>", clientSecret);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
@@ -95,7 +103,7 @@ export default function Payment() {
                   >
                     <div className="card-body">
                       <p className="card-text">
-                        <b>OrderTotal </b> :<b>Rs.{state.total}</b>
+                        <b>OrderTotal </b> :<b>Rs.{total}</b>
                       </p>
 
                       <br />
