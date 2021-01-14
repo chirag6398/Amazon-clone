@@ -6,11 +6,12 @@ import { useHistory } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import subtotalStyle from "../styles/subtotal.module.css";
 import axios from "../axios";
+import { db } from "../Firebase/firebase";
 
 export default function Payment() {
   const stripe = useStripe();
   const elements = useElements();
-  const [state, dispach] = StateValue();
+  const [state, dispatch] = StateValue();
   const history = useHistory();
   const [error, setError] = useState();
   const [disabled, setDisable] = useState();
@@ -33,9 +34,12 @@ export default function Payment() {
     };
     getClientSecret();
   }, [state.basket]);
+
   console.log(">>>>>>>>", clientSecret);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setProcessing(true);
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
@@ -44,9 +48,21 @@ export default function Payment() {
         },
       })
       .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(state.user)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: state.basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+        dispatch({
+          type: "Empty_basket",
+        });
         history.replace("/orders");
       });
   };
@@ -109,7 +125,6 @@ export default function Payment() {
                       <br />
                       <button
                         disabled={processing || disabled || succeeded}
-                        onClick={(e) => {}}
                         className="btn btn-dark"
                         style={{
                           display: "flex",

@@ -21,6 +21,11 @@ export const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
+    case "Empty_basket":
+      return {
+        ...state,
+        basket: [],
+      };
     default:
       return state;
   }
