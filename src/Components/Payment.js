@@ -1,70 +1,70 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import paymentStyle from "../styles/payment.module.css";
 import { StateValue } from "../StateProvider/StateProvider";
 import BasketItems from "./BasketItems.js";
 import { useHistory } from "react-router-dom";
-import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+// import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import subtotalStyle from "../styles/subtotal.module.css";
-import axios from "../axios";
-import { db } from "../Firebase/firebase";
+// import axios from "../axios";
+// import { db } from "../Firebase/firebase";
 
 export default function Payment() {
-  const stripe = useStripe();
-  const elements = useElements();
+  // const stripe = useStripe();
+  // const elements = useElements();
   const [state, dispatch] = StateValue();
   const history = useHistory();
   const [error, setError] = useState();
   const [disabled, setDisable] = useState();
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
-  const [clientSecret, setClientSecret] = useState(true);
+  // const [clientSecret, setClientSecret] = useState(true);
   var total = 0;
 
   for (let val of state.basket) {
     total += val.price;
   }
 
-  useEffect(() => {
-    const getClientSecret = async () => {
-      const response = await axios({
-        method: "post",
-        url: `/payments/create?total=${total * 100}`,
-      });
-      setClientSecret(response.data.clientSecret);
-    };
-    getClientSecret();
-  }, [state.basket]);
+  // useEffect(() => {
+  //   const getClientSecret = async () => {
+  //     const response = await axios({
+  //       method: "post",
+  //       url: `/payments/create?total=${total * 100}`,
+  //     });
+  //     setClientSecret(response.data.clientSecret);
+  //   };
+  //   getClientSecret();
+  // }, [state.basket]);
 
-  console.log(">>>>>>>>", clientSecret);
+  // console.log(">>>>>>>>", clientSecret);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setProcessing(true);
-    const payload = await stripe
-      .confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement),
-        },
-      })
-      .then(({ paymentIntent }) => {
-        db.collection("users")
-          .doc(state.user)
-          .collection("orders")
-          .doc(paymentIntent.id)
-          .set({
-            basket: state.basket,
-            amount: paymentIntent.amount,
-            created: paymentIntent.created,
-          });
-        setSucceeded(true);
-        setError(null);
-        setProcessing(false);
-        dispatch({
-          type: "Empty_basket",
-        });
-        history.replace("/orders");
-      });
+    // const payload = await stripe
+    //   .confirmCardPayment(clientSecret, {
+    //     payment_method: {
+    //       card: elements.getElement(CardElement),
+    //     },
+    //   })
+    //   .then(({ paymentIntent }) => {
+    //     db.collection("users")
+    //       .doc(state.user)
+    //       .collection("orders")
+    //       .doc(paymentIntent.id)
+    //       .set({
+    //         basket: state.basket,
+    //         amount: paymentIntent.amount,
+    //         created: paymentIntent.created,
+    //       });
+    setSucceeded(true);
+    setError(null);
+    setProcessing(false);
+    dispatch({
+      type: "Empty_basket",
+    });
+    history.replace("/orders");
+    // });
   };
   const handleChange = (e) => {
     setDisable(e.empty);
@@ -110,7 +110,7 @@ export default function Payment() {
           </div>
           <div className={paymentStyle.payment_details}>
             <form onSubmit={handleSubmit}>
-              <CardElement onChange={handleChange} />
+              {/* <CardElement onChange={handleChange} /> */}
               <div className={paymentStyle.payment__paymentDetail}>
                 <div className={subtotalStyle.Subtotal_container}>
                   <div
